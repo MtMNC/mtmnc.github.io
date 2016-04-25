@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+/*@font-face {
+        font-family: 'GoudyTrajan';
+        src: url('http://biosetor01.com/resources/goudytrajan-webfont.eot');
+        src: url('http://biosector01.com/resources/goudytrajan-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://biosector01.com/resources/goudytrajan-webfont.woff') format('woff'),
+        url('http://biosector01.com/resources/GoudyTrajan.ttf') format('truetype'),
+        url('http://biosector01.com/resources/goudytrajan-webfont.svg#goudytrajanregular') format('svg');
+        font-style: normal;
+}*/
+
+body {
+  background: #a8dae3;
+}
+
+section {
+  margin-top: 1em;
+}
+
+li {
+  margin-top: .75em;
+  list-style: none;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: .2;
+  background: url(Comic_Barraki.png) no-repeat center center fixed !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
+  animation: 1.5s ease 1 forwards fade-in-background-image;
+}
+
+#content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding-top: 2em;
+  text-shadow: 0 0 1em #fff, 0 0 1em #fff;
+}
+
+#logo-description {
+  margin: 0;
+  padding: 0;
+  font-family: "GoudyTrajan", "Trajan Pro", "Trajan-Regular", "Georgia", "Times New Roman", serif;
+  font-weight: normal;
+}
+
+#search-form {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.search-element {
+  width: 2.2em;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+#search-input-query {
+  width: 500px;
+  height: 2.2em;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding-left: .25em;
+  padding-right: .25em;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+#search-input-query:focus {
+  outline: 0;
+  border-color: #1a97ae;
+  -webkit-box-shadow: inset 0 0 0 .1em #1a97ae;
+  -moz-box-shadow: inset 0 0 0 .1em #1a97ae;
+  box-shadow: inset 0 0 0 .1em #1a97ae;
+}
+
+#search-input-submit {
+  height: 2.2em;
+  background-color: #1a97ae;
+  border: 1px solid #1a97ae;
+  background-image: url(search-icon.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#search-input-submit:hover {
+  background-color: #116b7c;
+  border-color: #116b7c;
+  cursor: pointer;
+}
+
+#search-input-submit:active,
+#search-input-submit:focus {
+  outline: 0;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+.explore-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.25em;
+}
+
+.explore-link:after {
+  content: ' →';
+}
+
+@keyframes fade-in-background-image {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+    /* We only want the screen to start out blank if the user can't view
+    the animation for whatever reason. This means a non-0 opacity needs
+    to be defined in the actual element's CSS. However, we also want the
+    screen to start out blank if the animation can play. This means we
+    can't use a delay before starting the animation, since that would
+    mean the background shows up for a bit, then turns clear and shows
+    up again. The solution is to include the delay in the animation itself. */
+  }
+
+  100% {
+    opacity: .2;
+  }
+}
