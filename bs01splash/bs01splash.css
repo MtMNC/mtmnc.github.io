@@ -30,10 +30,26 @@ li {
   bottom: 0;
   right: 0;
   opacity: .2;
-  background: url(Comic_Barraki.png) no-repeat center center fixed !important;
-        background-attachment: fixed !important;
-        background-size: cover !important;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   animation: 1.5s ease 1 forwards fade-in-background-image;
+}
+
+.background-barraki {
+  background-image: url(Comic_Barraki.png);
+}
+
+.background-kardanui {
+  background-image: url(Art_Matoros_Final_Moments.jpg);
+}
+
+.background-roxtus {
+  background-image: url(TLR_Roxtus_Arena.png);
+}
+
+.background-vezon {
+  background-image: url(Comic_Vezon_and_Fenrakk.png);
 }
 
 #content {
@@ -71,6 +87,7 @@ li {
   padding-left: .25em;
   padding-right: .25em;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  -webkit-appearance: none; /* override default WebKit search box styling */
 }
 
 #search-input-query:focus {
