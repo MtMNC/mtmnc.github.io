@@ -2,6 +2,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bs01splash.css" />
     <title>BS01 Wiki</title>
+    <script src="search-suggestions.js"></script>
   </head>
   <body>
     <div id="background" class="background-barraki"></div>
@@ -12,7 +13,10 @@
       </section>
       <section id="section-search">
         <form id="search-form" action="http://biosector01.com/search.php" method="get">
-          <input type="search" name="query" placeholder="Search" title="Search BS01 Wiki" id="search-input-query" class="search-element" autocomplete="off" autofocus="autofocus" value>
+          <div id="search-box-container">
+            <input type="search" name="query" placeholder="Search" title="Search BS01 Wiki" id="search-input-query" class="search-element" autocomplete="off" autofocus="autofocus">
+            <div id="search-suggestions"></div>
+          </div>
           <button id="search-input-submit" class="search-element" type="submit"></button>
           <input type="hidden" name="search" value="1">
         </form>
