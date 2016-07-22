@@ -53,7 +53,7 @@ window.onload = function() {
     }
   }
 
-  //MWSearchSuggestions.wiki = "http://biosector01.com/wiki/";
+  MWSearchSuggestions.wiki = "http://biosector01.com/wiki/";
   var searchBox = document.getElementById("search-input-query");
   searchBox.addEventListener("input", function() {
     MWSearchSuggestions.update(this.value);
