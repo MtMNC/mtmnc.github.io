@@ -4,6 +4,7 @@ window.onload = function() {
     var podcastRSS = new XMLHttpRequest();
     podcastRSS.onreadystatechange = function() {
         if (podcastRSS.readyState == 4 && podcastRSS.status == 200) {
+            alert(podcastRSS.responseText);
             outputPodcastData(podcastRSS);
         }
     };
@@ -12,7 +13,7 @@ window.onload = function() {
     //However, PHP doesn't have the same restriction. Instead of requesting the
     //feed itself, we request a PHP file on our domain that then requests the
     //RSS file for us. Problem solved. Proxy code: https://github.com/abdul/php-proxy
-    podcastRSS.open("GET", "proxy.php?url=http%3A%2F%2Fwww.bs01podcast.com%2Ffeed%2F", true);
+    podcastRSS.open("GET", "proxy.php", true);
     podcastRSS.send();
   }
 
