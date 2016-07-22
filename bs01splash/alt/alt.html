@@ -1,21 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="alt.css" />
+    <link rel="stylesheet" type="text/css" href="alt.css">
     <title>BS01 Wiki</title>
     <script src="search-suggestions.js"></script>
     <script src="podcast.js"></script>
   </head>
   <body class="background-kewa">
-    <div id="main-gradient" class="background-gradient"></div>
+    <div class="background-gradient" id="main-gradient"></div>
     <div id="header">
       <div id="header-nav-links">
         Social media links? RC?
       </div>
       <div id="header-user-links">
-        <a href="http://biosector01.com/wiki/index.php?title=Special:UserLogin&type=signup" class="header-link">
+        <a class="header-link" href="http://biosector01.com/wiki/index.php?title=Special:UserLogin&type=signup" >
           <div class="button header-button orange-button">Create account</div>
         </a>
-        <a href="http://biosector01.com/wiki/index.php?title=Special:UserLogin" class="header-link">
+        <a class="header-link" href="http://biosector01.com/wiki/index.php?title=Special:UserLogin">
           <div class="button header-button blue-button">Log in</div>
         </a>
       </div>
@@ -31,8 +32,8 @@
             <input type="search" name="query" placeholder="Search" title="Search BS01 Wiki" id="search-input-query" class="search-element" autocomplete="off" autofocus="autofocus">
             <div id="search-suggestions"></div>
           </div>
-          <button id="search-input-submit" class="search-element button search-button blue-button" type="submit"><img id="icon-search" class="search-button-icon" src="icon-search.png" alt="search"/></button>
-          <a href="http://biosector01.com/wiki/index.php/Special:Random" id="search-input-random" class="search-element button search-button blue-button"><img id="icon-random" class="search-button-icon" src="icon-random.png" alt="random article"/></a>
+          <button id="search-input-submit" class="search-element button search-button blue-button" type="submit"><img id="icon-search" class="search-button-icon" src="icon-search.png" alt="Search" title="Submit search"/></button>
+          <a id="search-input-random" class="search-element button search-button blue-button" href="http://biosector01.com/wiki/index.php/Special:Random"><img id="icon-random" class="search-button-icon" src="icon-random.png" alt="Random article" title="Random article"/></a>
           <input type="hidden" name="search" value="1">
         </form>
       </section>
@@ -44,32 +45,32 @@
           <div id="featured-lore" class="featured-box">
             <h2 class="featured-category">Lore</h2>
             <!--<img src="Umarak_The_Hunter_by_Matt_Batteker.jpg" id="featured-media-image" />-->
-            <div id="podcast-text" class="featured-text">
+            <div class="featured-text" id="lore-text">
               <span class="text-highlight lore-highlight">Featured article? Image?</span>
             </div>
           </div>
-          <a href="http://www.bs01podcast.com/2016/07/08/episode-08-fish-and-wildlife-podcast/" id="podcast-link" class="featured-link">
+          <a class="featured-link" id="podcast-link" href="http://www.bs01podcast.com/">
             <div id="featured-podcast" class="featured-box">
               <h2 class="featured-category">Podcast</h2>
-              <div id="podcast-gradient" class="background-gradient"></div>
-              <div id="podcast-text" class="featured-text">
-                <h3 class="featured-heading"><span id="podcast-name" class="text-highlight podcast-highlight">Podcast data not found :(</span></h3>
-                <!--<span id="podcast-description" class="text-highlight podcast-highlight">It's expected location is http://www.bs01podcast.com/feed/</span>-->
+              <div class="background-gradient" id="podcast-gradient"></div>
+              <div class="featured-text hidden" id="podcast-text">
+                <h3 class="featured-heading"><span class="text-highlight podcast-highlight" id="podcast-name">BS01 Podcast</span></h3>
+                <span class="text-highlight podcast-highlight" id="podcast-description"></span>
               </div>
             </div>
           </a>
-          <a href="http://biosector01.com/wiki/index.php/Review:71313_by_Dorek" class="featured-link">
+          <a class="featured-link" href="http://biosector01.com/wiki/index.php/Review:71313_by_Dorek">
             <div id="featured-reviews" class="featured-box">
-              <div class="featured-category">Reviews</div>
-              <div id="reviews-gradient" class="background-gradient"></div>
-              <div id="reviews-text" class="featured-text">
+              <h2 class="featured-category">Reviews</h2>
+              <div class="background-gradient" id="reviews-gradient"></div>
+              <div class="featured-text" id="reviews-text">
                 <h3 class="featured-heading"><span class="text-highlight reviews-highlight">71313 Lava Beast</span></h3>
                 <span class="text-highlight reviews-highlight">by Dorek</span>
               </div>
             </div>
           </a>
           <div id="featured-social" class="featured-box">
-            <div class="featured-category">Twitter</div>
+            <h2 class="featured-category">Twitter</h2>
             <a class="twitter-timeline" data-height="285" data-dnt="true" data-theme="dark" data-link-color="#1A97AF" data-chrome="noheader nofooter transparent noborders" href="https://twitter.com/BS01LUG">Tweets by BS01LUG</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>

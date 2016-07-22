@@ -88,6 +88,10 @@ a.header-link {
   border-color: #116b7c;
 }
 
+.hidden {
+  display: none;
+}
+
 section {
   margin-top: 1em;
 }
@@ -283,9 +287,6 @@ section {
   padding: .1em;
   line-height: 1.3em;
 }
-
-
-
 
 #featured-podcast {
   background-color: #263472;
