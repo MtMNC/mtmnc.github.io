@@ -1,5 +1,3 @@
-window.onload = function() {
-
   function getPodcastRSS() {
     var podcastRSS = new XMLHttpRequest();
     podcastRSS.onreadystatechange = function() {
@@ -38,7 +36,3 @@ window.onload = function() {
     linkElement.setAttribute("href", link);
     textWrapperElement.classList.remove("hidden"); //doesn't have IE 8 support
   }
-
-  getPodcastRSS();
-
-}
