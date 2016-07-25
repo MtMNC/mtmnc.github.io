@@ -30,18 +30,31 @@ body {
 }
 
 #header {
-  padding: .25em;
   background: #000;
   position: relative;
   z-index: 1;
-  height: 2.75em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: .25em;
 }
 
-#header-nav-links {
+#header-social-links {
   display: inline-block;
-  padding: .75em;
-
+  padding-top: .25em;
+  line-height: 100%;
 }
+
+.social-link {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+}
+
+.social-image {
+  width: inherit;
+  height: inherit;
+}
+
 #header-user-links {
   display: inline-block;
   float: right;
@@ -51,6 +64,10 @@ a.header-link {
   color: #fff;
   text-decoration: none;
   display: inline-block;
+}
+
+.button {
+  border: 0; /* override default style of button (the element not the .button class) */
 }
 
 .button:hover {
@@ -65,27 +82,23 @@ a.header-link {
 
 .header-button {
   display: inline-block;
-  padding: .75em;
+  padding: 0 .5em;
 }
 
 .orange-button {
   background-color: #ff7b00;
-  border: 1px solid #ff7b00;
 }
 
 .orange-button:hover {
   background-color: #d26805;
-  border-color: #d26805;
 }
 
 .blue-button {
   background-color: #1a97ae;
-  border: 1px solid #1a97ae;
 }
 
 .blue-button:hover {
   background-color: #116b7c;
-  border-color: #116b7c;
 }
 
 .hidden {
@@ -222,7 +235,6 @@ section {
 .explore-link:after {
   content: ' →';
 }
-
 
 .featured-link:hover {
   opacity: .5;
