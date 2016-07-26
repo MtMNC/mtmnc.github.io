@@ -32,7 +32,7 @@
     var link = blogPosts[0].getElementsByTagName("link")[0].firstChild.nodeValue;
 
     titleElement.textContent = title;
-    descriptionElement.textContent = description;
+    // descriptionElement.textContent = description;
     linkElement.setAttribute("href", link);
     textWrapperElement.classList.remove("hidden"); //doesn't have IE 8 support
   }

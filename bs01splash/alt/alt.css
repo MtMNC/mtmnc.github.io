@@ -327,7 +327,7 @@ section {
 }
 
 .podcast-highlight {
-  background-color: #263472;
+  /*background-color: #263472;*/
   color: #fff;
 }
 
@@ -346,8 +346,8 @@ section {
 }
 
 .reviews-highlight {
-  background-color: #ccc;
-  color: #000;
+  /*background-color: #ccc;*/
+  color: #FFF;
 }
 
 @keyframes random-vezon-shake {
