@@ -5,12 +5,12 @@
             outputPodcastData(podcastRSS);
         }
     };
-    //Since the RSS feed is on another domain feedburner.com) and the feed lacks the appropriate
+    //Since the RSS feed is on another domain (feedburner.com) and the feed lacks the appropriate
     //Access-Control-Allow-Origin header, we can't pull it with plain old JS. Instead of
     //requesting the feed itself, we let Yahoo! Query Language do the work for us. It'll process
     //the RSS, pull out the titles, descriptions, and links for us, then return them. Problem
     //solved. Credit to Derek Gathright on StackOverflow: http://stackoverflow.com/a/2679304
-    podcastRSS.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20title%2C%20link%2C%20itunes%3Asubtitle%20from%20rss%20where%20url%3D'https%3A%2F%2Ffeeds.feedburner.com%2FBS01Podcast%3Fformat%3Dxml'&diagnostics=true", true);
+    podcastRSS.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20title%2C%20link%2C%20itunes%3Asubtitle%20from%20rss%20where%20url%3D'https%3A%2F%2Ffeeds.feedburner.com%2FBS01Podcast%3Fformat%3Dxml'", true);
     podcastRSS.send();
   }
 

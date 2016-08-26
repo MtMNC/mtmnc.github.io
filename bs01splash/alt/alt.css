@@ -222,23 +222,23 @@ section {
   animation: random-vezon-shake 0.3s linear 0s 2;
 }
 
-#search-suggestions {
-
-}
-
 #section-featured {
-  position: relative;;
+  position: relative;
   bottom:0;
 }
 
-.explore-link {
+#explore-link {
   color: #fff;
   text-decoration: none;
   font-size: 1.25em;
 }
 
-.explore-link:after {
+#explore-link:after {
   content: ' →';
+}
+
+#explore-name {
+  font-weight: bold;
 }
 
 .featured-link:hover {
