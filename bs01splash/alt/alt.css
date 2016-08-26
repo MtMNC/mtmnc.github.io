@@ -309,6 +309,7 @@ section {
 .text-highlight {
   padding: .1em;
   line-height: 1.3em;
+  color: #fff;
 }
 
 #featured-podcast {
@@ -326,11 +327,18 @@ section {
   background-image: linear-gradient(135deg, #263472, #777);
 }
 
-.podcast-highlight {
-  /*background-color: #263472;*/
-  color: #fff;
+#featured-g2cont {
+  background-color: #673ab7;
+  background-image: url(pictures/Voriki.jpg);
 }
 
+#g2cont-gradient {
+  background-color: #673ab7;
+  background-image: -webkit-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: -moz-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: -o-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: linear-gradient(135deg, #673ab7, #00bcd4);
+}
 
 #featured-reviews {
   background-color: #ccc;
