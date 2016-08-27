@@ -43,6 +43,7 @@ function setBackground(backgroundData) {
   //set the explore link's URL and text to the values we just got
   exploreLinkElement.href = exploreLinkURL;
   exploreLinkNameElement.textContent = exploreLinkText;
+  exploreLinkElement.style.visibility = "visible";
 
   //get the two optional subnodes (color 1, color 2) if they are both there, i.e. there are at least 4 subnodes
   if (nodeToUse.childElementCount >= 4) {

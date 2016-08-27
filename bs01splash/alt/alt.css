@@ -4,6 +4,7 @@ body {
   font-family: "Franklin Gothic Book", "Helvetica Neue", sans-serif;
   margin: 0;
   background-color: #fff;
+  background-image: url(img/bgbio2015.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -101,16 +102,12 @@ a.header-link {
   background-color: #116b7c;
 }
 
-.hidden {
-  display: none;
-}
-
 section {
   margin: 2em;
 }
 
 .background-kewa {
-  background-image: url(pictures/MNOLG_Gukko_Force.png);
+  background-image: url(img/MNOLG_Gukko_Force.png);
 }
 
 #content {
@@ -231,6 +228,7 @@ section {
   color: #fff;
   text-decoration: none;
   font-size: 1.25em;
+  visibility: hidden;
 }
 
 #explore-link:after {
@@ -314,7 +312,7 @@ section {
 
 #featured-podcast {
   background-color: #263472;
-  background-image: url(pictures/Tahtorak.png);
+  background-image: url(img/Tahtorak.png);
   /*background-size: cover;
   background-repeat: no-repeat;*/
 }
@@ -329,7 +327,7 @@ section {
 
 #featured-g2cont {
   background-color: #673ab7;
-  background-image: url(pictures/Voriki.jpg);
+  background-image: url(img/Voriki.jpg);
 }
 
 #g2cont-gradient {
@@ -342,7 +340,7 @@ section {
 
 #featured-reviews {
   background-color: #ccc;
-  background-image: url(pictures/27150705462_d18a00fde3_b.jpg);
+  background-image: url(img/27150705462_d18a00fde3_b.jpg);
 }
 
 #reviews-gradient {
