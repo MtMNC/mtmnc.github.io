@@ -9,6 +9,7 @@ body {
   background-size: cover;
   background-position: center;
   color: #fff;
+  min-width: 330px;
 }
 
 .background-gradient {
@@ -31,7 +32,7 @@ body {
 }
 
 #header {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
   height: 2.5em;
@@ -94,14 +95,21 @@ a.header-link {
   background-color: #d26805;
 }
 
-.blue-button {
+.light-blue-button {
   background-color: #1a97ae;
 }
 
-.blue-button:hover {
-  background-color: #116b7c;
+.light-blue-button:hover {
+  background-color: #116b7d;
 }
 
+.dark-blue-button {
+  background-color: #056b7d;
+}
+
+.dark-blue-button:hover {
+  background-color: #083f4c;
+}
 section {
   margin: 2em;
 }
@@ -115,6 +123,15 @@ section {
   text-align: center;
   z-index: 1;
   /*text-shadow: 0 0 1em #fff, 0 0 1em #fff;*/
+}
+
+#logo-horiz {
+  width: 80%;
+  min-width: 200px;
+  max-width: 350px;
+  margin: 0 auto;
+  display: none;
+  padding: 1em;
 }
 
 #logo-description {
@@ -136,7 +153,9 @@ section {
 }
 
 #search-box-container {
-  width: 500px;
+  width: calc(100% - 2.5em); /* leave room for the search button */
+  min-width: 200px;
+  max-width: 500px;
   margin: 0 auto;
   display: inline-block;
   position: relative;
@@ -155,10 +174,10 @@ section {
 
 #search-input-query:focus {
   outline: 0;
-  border-color: #1a97ae;
-  -webkit-box-shadow: inset 0 0 0 .1em #1a97ae;
-  -moz-box-shadow: inset 0 0 0 .1em #1a97ae;
-  box-shadow: inset 0 0 0 .1em #1a97ae;
+  border-color: #056b7d;
+  -webkit-box-shadow: inset 0 0 0 .1em #056b7d;
+  -moz-box-shadow: inset 0 0 0 .1em #056b7d;
+  box-shadow: inset 0 0 0 .1em #056b7d;
 }
 
 #search-suggestions {
@@ -168,7 +187,7 @@ section {
   background-color: #fff;
   box-sizing: border-box;
   transition: 0s 0.25s visibility;
-  border: 1px solid #1a97ae;
+  border: 1px solid #056b7d;
   border-top: 0;
   border-bottom: 0;
   z-index: 2;
@@ -189,7 +208,7 @@ section {
 }
 
 .search-suggestion-link:last-of-type {
-  border-bottom: 1px solid #1a97ae;
+  border-bottom: 1px solid #056b7d;
 }
 
 .search-suggestion-link:hover {
@@ -363,5 +382,32 @@ section {
 
   75% {
     transform: rotate(-10deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #section-featured {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  #logo-description,
+  #search-input-random,
+  #logo-vert {
+    display: none;
+  }
+
+  section {
+    margin: .5em;
+    margin-bottom: 1em;
+  }
+
+  #section-explore {
+    margin-top: 1.5em;
+  }
+  
+  #logo-horiz {
+    display: block;
   }
 }

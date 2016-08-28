@@ -54,6 +54,7 @@ function setBackground(backgroundData) {
         color2 = color2Subnode.firstChild.nodeValue;
     //set the background gradient's colors to the values we just got
     gradientElement.setAttribute("style",
+                                 "background-color: " + color1 + ";" +
                                  "background-image: -webkit-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
                                  "background-image: -moz-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
                                  "background-image: -o-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
