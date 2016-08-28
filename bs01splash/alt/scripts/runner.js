@@ -6,4 +6,7 @@ window.onload = function() {
   searchBox.addEventListener("input", function() {
     searchSuggestions.update(this.value);
   });
+  document.getElementById("sidebar-opener").addEventListener("click", function() {
+    document.body.classList.toggle("sidebar-open");
+  });
 }
