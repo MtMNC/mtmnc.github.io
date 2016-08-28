@@ -16,7 +16,7 @@ function getBackgroundData() {
 }
 
 function setBackground(backgroundData) {
-  var imageElement = document.body,
+  var imageElement = document.getElementById("main-container"),
       exploreLinkElement = document.getElementById("explore-link"),
       exploreLinkNameElement = document.getElementById("explore-name"),
       gradientElement = document.getElementById("main-gradient");
