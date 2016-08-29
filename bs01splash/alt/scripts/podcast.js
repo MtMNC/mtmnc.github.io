@@ -2,7 +2,7 @@
     var podcastRSS = new XMLHttpRequest();
     podcastRSS.onreadystatechange = function() {
         if (podcastRSS.readyState == 4 && podcastRSS.status == 200) {
-            outputPodcastData(podcastRSS);
+            outputPodcastData(podcastRSS.responseXML);
         }
     };
     //Since the RSS feed is on another domain (feedburner.com) and the feed lacks the appropriate
@@ -14,13 +14,12 @@
     podcastRSS.send();
   }
 
-  function outputPodcastData(podcastRSS) {
+  function outputPodcastData(response) {
     var titleElement = document.getElementById("podcast-name"),
         descriptionElement = document.getElementById("podcast-description"),
         linkElement = document.getElementById("podcast-link")
         textWrapperElement = document.getElementById("podcast-text");
-    var xml = podcastRSS.responseXML;
-    var blogPosts = xml.getElementsByTagName("item");
+    var blogPosts = response.getElementsByTagName("item");
     //the latest episode's title is written in the latest blog post's <title>
     var title = blogPosts[0].getElementsByTagName("title")[0].firstChild.nodeValue;
     //the latest episode's description in written in the latest blog post's <itunes:subtitle>

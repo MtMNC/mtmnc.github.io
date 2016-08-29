@@ -1,6 +1,7 @@
 window.onload = function() {
   //getPodcastRSS();
   getBackgroundData();
+  //getUserInfo();
   var searchSuggestions = new MWSearchSuggestions({"wiki": "http://biosector01.com/wiki/"});
   var searchBox = searchSuggestions.searchInputElement;
   searchBox.addEventListener("input", function() {

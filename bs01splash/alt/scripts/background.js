@@ -2,7 +2,7 @@ function getBackgroundData() {
   var backgroundApiCall = new XMLHttpRequest();
   backgroundApiCall.onreadystatechange = function() {
       if (backgroundApiCall.readyState == 4 && backgroundApiCall.status == 200) {
-          setBackground(backgroundApiCall);
+          setBackground(backgroundApiCall.responseXML);
       }
   };
   //Since the HTML is on another domain (biosector01.com) and the HTML lacks the appropriate
@@ -12,18 +12,15 @@ function getBackgroundData() {
   //on StackOverflow: http://stackoverflow.com/a/2679304
   backgroundApiCall.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%27http%3A%2F%2Fbiosector01.com%2Fwiki%2Findex.php%3Ftitle%3DUser%3AMorris_the_Mata_Nui_Cow%2FSandbox2%26action%3Drender%27%20and%20xpath%3D%22%2F%2Fdiv%22", true);
   backgroundApiCall.send();
-
 }
 
-function setBackground(backgroundData) {
+function setBackground(response) {
   var imageElement = document.getElementById("main-container"),
       exploreLinkElement = document.getElementById("explore-link"),
       exploreLinkNameElement = document.getElementById("explore-name"),
       gradientElement = document.getElementById("main-gradient");
-  var xml = backgroundData.responseXML;
-
   //pick a random node (containing an image, link, and two colors) to use
-  var nodes = xml.getElementsByTagName("div");
+  var nodes = response.getElementsByTagName("div");
   var numberOfNodes = nodes.length;
   //pick random number between 1 and numberOfNodes (both inclusive)
   var randomNode = Math.floor(Math.random() * (numberOfNodes)) + 1;
