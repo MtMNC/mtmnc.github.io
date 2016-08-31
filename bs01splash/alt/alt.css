@@ -376,6 +376,10 @@ section {
   font-weight: bold;
 }
 
+.featured-link {
+  display: none;
+}
+
 .featured-link:hover {
   opacity: .5;
 }
@@ -396,6 +400,7 @@ section {
   box-sizing: border-box;
   overflow: hidden;
   /* same width even if no padding */
+  color: #fff;
 }
 
 .featured-category {
@@ -423,7 +428,7 @@ section {
   border-top: 1.5em solid #000;
 }
 
-.featured-heading {
+.featured-title {
   font-size: 1.75em;
   margin-bottom: 0;
 }
@@ -441,12 +446,6 @@ section {
   bottom: .5em;
 }
 
-.text-highlight {
-  padding: .1em;
-  line-height: 1.3em;
-  color: #fff;
-}
-
 #featured-podcast {
   background-color: #263472;
   background-image: url(img/Tahtorak.png);
@@ -462,25 +461,7 @@ section {
   background-image: linear-gradient(135deg, #263472, #777);
 }
 
-#featured-g2cont {
-  background-color: #673ab7;
-  background-image: url(img/Voriki.jpg);
-}
-
-#g2cont-gradient {
-  background-color: #673ab7;
-  background-image: -webkit-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: -moz-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: -o-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: linear-gradient(135deg, #673ab7, #00bcd4);
-}
-
-#featured-reviews {
-  background-color: #ccc;
-  background-image: url(img/27150705462_d18a00fde3_b.jpg);
-}
-
-#reviews-gradient {
+#gradient-left {
   background-color: #777;
   background-image: -webkit-linear-gradient(135deg, #ccc, #777);
   background-image: -moz-linear-gradient(135deg, #ccc, #777);
@@ -488,9 +469,12 @@ section {
   background-image: linear-gradient(135deg, #ccc, #777);
 }
 
-.reviews-highlight {
-  /*background-color: #ccc;*/
-  color: #FFF;
+#gradient-right {
+  background-color: #673ab7;
+  background-image: -webkit-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: -moz-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: -o-linear-gradient(135deg, #673ab7, #00bcd4);
+  background-image: linear-gradient(135deg, #673ab7, #00bcd4);
 }
 
 @keyframes shake {
