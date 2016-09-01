@@ -21,10 +21,10 @@ function setUserInfo(response) {
     //if logged in
     if (response.query.userinfo.blockid === undefined) {
       //if not blocked
-      avatarElement.setAttribute("src", "avatars/avatar-user.png");
+      avatarElement.setAttribute("src", "img/avatar-user.png");
       avatarElement.setAttribute("title", "You are logged in as " + response.query.userinfo.name);
     } else {
-      avatarElement.setAttribute("src", "avatars/avatar-blocked.png");
+      avatarElement.setAttribute("src", "img/avatar-blocked.png");
       avatarElement.setAttribute("title", "You are blocked from editing");
     }
 
