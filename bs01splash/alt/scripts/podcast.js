@@ -33,5 +33,5 @@
     titleElement.textContent = title;
     // descriptionElement.textContent = description;
     linkElement.setAttribute("href", link);
-    textWrapperElement.classList.remove("hidden"); //doesn't have IE 8 support
+    textWrapperElement.classList.remove("hidden"); //IE 10+
   }

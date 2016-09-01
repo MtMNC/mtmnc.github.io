@@ -3,14 +3,10 @@ window.onload = function() {
   getBackgroundData();
   //getUserInfo();
   var searchSuggestions = new MWSearchSuggestions({"wiki": "http://biosector01.com/wiki/"});
-  var searchBox = searchSuggestions.searchInputElement;
-  searchBox.addEventListener("input", function() {
-    searchSuggestions.update(this.value);
-  });
   document.getElementById("sidebar-opener").addEventListener("click", function() {
-    document.body.classList.toggle("sidebar-open");
+    document.body.classList.toggle("sidebar-open"); //IE 10+
   });
   document.getElementById("fade-overlay").addEventListener("click", function() {
-    document.body.classList.remove("sidebar-open");
+    document.body.classList.remove("sidebar-open"); //IE 10+
   });
-}
+};

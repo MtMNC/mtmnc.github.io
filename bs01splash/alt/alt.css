@@ -3,7 +3,6 @@
 body {
   font-family: "Franklin Gothic Book", "Helvetica Neue", sans-serif;
   margin: 0;
-  background-color: #fff;
   color: #fff;
   min-width: 300px;
   min-height: 100vh;
@@ -116,7 +115,6 @@ body {
 #user-link {
   color: #fff;
   text-decoration: none;
-  display: inline-block;
   height: 4em; /* 3em (height of #header) + 1.5em (height of #header:after) - .5em (top and bottom padding) */
   float: right;
   position: relative;
@@ -162,22 +160,6 @@ body {
 .header-button {
   display: inline-block;
   padding: 0 .5em;
-}
-
-.orange-button {
-  background-color: #ff7b00;
-}
-
-.orange-button:hover {
-  background-color: #d26805;
-}
-
-.light-blue-button {
-  background-color: #1a97ae;
-}
-
-.light-blue-button:hover {
-  background-color: #116b7d;
 }
 
 .dark-blue-button {
@@ -235,7 +217,6 @@ section {
   position: relative;
   text-align: center;
   z-index: 1;
-  /*text-shadow: 0 0 1em #fff, 0 0 1em #fff;*/
 }
 
 #logo-horiz {
@@ -325,13 +306,13 @@ section {
   border-bottom: 1px solid #056b7d;
 }
 
-.search-suggestion-link:hover {
+.search-suggestion-link:hover,
+.selected-suggestion {
   background-color: #eee;
 }
 
 .search-suggestion-link:focus {
   background-color: #ddd;
-  color: inherit;
 }
 
 .search-button {
@@ -354,11 +335,6 @@ section {
 
 #search-input-random:hover #icon-random {
   animation: shake .3s linear 0s 2;
-}
-
-#section-featured {
-  position: relative;
-  bottom:0;
 }
 
 #explore-link {
@@ -399,7 +375,6 @@ section {
   background-size: cover;
   box-sizing: border-box;
   overflow: hidden;
-  /* same width even if no padding */
   color: #fff;
 }
 
