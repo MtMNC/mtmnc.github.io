@@ -9,4 +9,7 @@ window.onload = function() {
   document.getElementById("fade-overlay").addEventListener("click", function() {
     document.body.classList.remove("sidebar-open"); //IE 10+
   });
+  document.getElementById("sidebar-closer").addEventListener("click", function() {
+    document.body.classList.remove("sidebar-open"); //IE 10+
+  });
 };

@@ -84,14 +84,17 @@ body {
   border-top: 1.5em solid rgba(0, 0, 0, .3);
 }
 
-#sidebar-opener {
+.sidebar-button {
   position: absolute;
   top: 0;
   left: 0;
   width: 3em;
   height: 3em;
-  background-image: url(img/icon-sidebar.png);
   background-size: 100% 100%;
+}
+
+#sidebar-opener {
+  background-image: url(img/icon-sidebar-open.png);
 }
 
 #header-social-links {
@@ -185,6 +188,15 @@ body {
   box-shadow: inset -.75em 0 .5em -.5em rgba(0, 0, 0, .3);
 }
 
+#sidebar-closer {
+  background-image: url(img/icon-sidebar-close.png);
+  display: none;
+}
+
+#sidebar-closer:hover {
+  opacity: .5;
+}
+
 .sidebar-link-group {
   padding: 0; /* reset ul behavior */
   margin: 0; /* reset ul behavior */
@@ -239,7 +251,6 @@ section {
 #logo-description {
   margin: 0;
   padding: 0;
-  /*font-family: "GoudyTrajan", "Trajan Pro", "Trajan-Regular", "Georgia", "Times New Roman", serif;*/
   font-weight: normal;
 }
 
@@ -422,26 +433,9 @@ section {
 }
 
 .featured-text {
-  /*position: relative;
-  margin-top: 3em;*/
   z-index: 1;
   position: absolute;
   bottom: .5em;
-}
-
-#featured-podcast {
-  background-color: #263472;
-  background-image: url(img/Tahtorak.png);
-  /*background-size: cover;
-  background-repeat: no-repeat;*/
-}
-
-#podcast-gradient {
-  background-color: #777;
-  background-image: -webkit-linear-gradient(135deg, #263472, #777);
-  background-image: -moz-linear-gradient(135deg, #263472, #777);
-  background-image: -o-linear-gradient(135deg, #263472, #777);
-  background-image: linear-gradient(135deg, #263472, #777);
 }
 
 #gradient-left {
@@ -499,6 +493,26 @@ section {
     display: block;
   }
 }
+
+@media screen and (max-width: 20em) { /* 12em for sidebar, 3em for sidebar opener */
+  #sidebar {
+    width: 100vw; /* not 100% b/c the body (which the 100% is relative to) might be wider than the window */
+    left: -100vw;
+  }
+
+  #sidebar-closer {
+    display: block;
+  }
+
+  #main-container {
+    transition: none;
+  }
+
+  .sidebar-open #main-container {
+    transform: translateX(100vw);
+  }
+}
+
 
 @keyframes shake {
   25% {
