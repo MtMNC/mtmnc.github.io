@@ -120,8 +120,8 @@ body {
   color: #fff;
   text-decoration: none;
   height: 4em; /* 3em (height of #header) + 1.5em (height of #header:after) - .5em (top and bottom padding) */
-  float: right;
-  position: relative;
+  position: absolute; /* position: absolute so it doesn't push the site logo off center when the window is small */
+  right: .25em;
   z-index: 1;
 }
 
