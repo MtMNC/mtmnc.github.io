@@ -1,4 +1,41 @@
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      FontSite Inc.
+ * License URL: https://www.fontspring.com/licenses/fontsite/webfont
+ *
+ *
+ */
+
 @charset "UTF-8";
+
+@font-face {
+    font-family: "Franklin Gothic Book";
+    src: url(fonts/franklingothic-book-webfont.eot);
+    src: local("Franklin Gothic Book"),
+         url(fonts/franklingothic-book-webfont.eot?#iefix) format("embedded-opentype"),
+         url(fonts/franklingothic-book-webfont.woff2) format("woff2"),
+         url(fonts/franklingothic-book-webfont.woff) format("woff"),
+         url(fonts/franklingothic-book-webfont.ttf) format("truetype"),
+         url(fonts/franklingothic-book-webfont.svg#franklin_gothic_fsbook) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
   font-family: "Franklin Gothic Book", "Helvetica Neue", sans-serif;
@@ -13,6 +50,10 @@ body {
 
 .sidebar-open {
   overflow-x: hidden;
+}
+
+a {
+  transition: opacity .1s;
 }
 
 #main-container {
@@ -35,15 +76,16 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: .8;
-  background-color: #fff;
-  z-index: 3;
+  opacity: 0;
+  background-color: #eee;
+  z-index: 0;
   cursor: pointer;
-  display: none;
+  transition: opacity .2s;
 }
 
 .sidebar-open #fade-overlay {
-  display: block;
+  z-index: 3;
+  opacity: .8;
 }
 
 .background-gradient {
@@ -153,6 +195,7 @@ body {
 
 .button {
   border: 0; /* override default style of button (the element not the .button class) */
+  transition: background-color .1s;
 }
 
 .button:hover {
@@ -367,16 +410,16 @@ section {
   content: '\00a0→';
 }
 
+#explore-link:hover {
+  opacity: .5;
+}
+
 #explore-name {
   font-weight: bold;
 }
 
 .featured-link {
   display: none;
-}
-
-.content-link:hover {
-  opacity: .5;
 }
 
 .featured-box {
@@ -409,6 +452,7 @@ section {
   height: 1.5em;
   line-height: 1.5em;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 .featured-category:after {
@@ -418,8 +462,8 @@ section {
   position: absolute;
   top: 100%;
   right: 0;
-  border-left: 1.5em solid transparent;
-  border-top: 1.5em solid #000;
+  border-left: .75em solid transparent;
+  border-top: .75em solid #000;
 }
 
 .featured-title {
@@ -436,22 +480,12 @@ section {
   z-index: 1;
   position: absolute;
   bottom: .5em;
+  text-shadow: 0 0 1em #333;
 }
 
-#gradient-left {
-  background-color: #777;
-  background-image: -webkit-linear-gradient(135deg, #ccc, #777);
-  background-image: -moz-linear-gradient(135deg, #ccc, #777);
-  background-image: -o-linear-gradient(135deg, #ccc, #777);
-  background-image: linear-gradient(135deg, #ccc, #777);
-}
-
-#gradient-right {
-  background-color: #673ab7;
-  background-image: -webkit-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: -moz-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: -o-linear-gradient(135deg, #673ab7, #00bcd4);
-  background-image: linear-gradient(135deg, #673ab7, #00bcd4);
+.text-highlight {
+  padding: .1em;
+  line-height: 1.3em;
 }
 
 #section-mobile-social-links {
@@ -496,8 +530,8 @@ section {
 
 @media screen and (max-width: 20em) { /* 12em for sidebar, 3em for sidebar opener */
   #sidebar {
-    width: 100vw; /* not 100% b/c the body (which the 100% is relative to) might be wider than the window */
-    left: -100vw;
+    width: 100%;
+    left: -100%;
   }
 
   #sidebar-closer {
@@ -509,7 +543,7 @@ section {
   }
 
   .sidebar-open #main-container {
-    transform: translateX(100vw);
+    transform: translateX(100%);
   }
 }
 

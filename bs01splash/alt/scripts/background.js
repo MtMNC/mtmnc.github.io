@@ -64,7 +64,7 @@ function setBackground(nodes) {
     switch (subnode.getAttribute("class")) {
       case "image":
         //store the href of the anchor in the "image" subnode
-        backgroundImage = subnode.firstChild.getAttribute("href")
+        backgroundImage = subnode.firstChild.getAttribute("href");
         imageAdded = true;
         break;
       case "link":
@@ -147,22 +147,16 @@ function processFeaturedNode(node, side) {
         //set the box's subtitle text (i.e., smaller text below title text) to the text in the "subtitle" subnode
         subtitleElement.textContent = subnode.firstChild.textContent;
         break;
-      case "gradient":
-        //if there are not exactly two subnodes (one for each color) in this subnode, don't do anything to the gradient
-        if (subnode.childElementCount !== 2) {
-          break;
-        }
-        //get the colors for the background gradient
-        var color1 = subnode.firstChild.firstChild.nodeValue,
-            color2 = subnode.firstChild.nextSibling.firstChild.nodeValue;
+      case "color":
+        //get the color for the background
+        var color = subnode.firstChild.nodeValue;
         //set the box's background gradient colors to the values we just got
         gradientElement.setAttribute("style",
-                                     "background-color: " + color1 + ";" +
-                                     "background-image: -webkit-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: -moz-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: -o-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: linear-gradient(135deg, " + color1 + ", " + color2 + ");"
-                                    );
+                                     "background-image: -webkit-linear-gradient(" + color + ", #000 90%);" +
+                                     "background-image: -moz-linear-gradient(" + color + ", #000 90%);" +
+                                     "background-image: -o-linear-gradient(" + color + ", #000 90%);" +
+                                     "background-image: linear-gradient(" + color + ", #000 90%);"
+                                   );
         break;
     }
   }
