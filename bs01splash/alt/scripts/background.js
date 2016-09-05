@@ -36,7 +36,7 @@ function setPageInfo(response) {
 }
 
 function setBackground(nodes) {
-  var imageElement = document.getElementById("main-container"),
+  var imageElement = document.getElementById("background-image"),
       exploreLinkElement = document.getElementById("explore-link"),
       exploreLinkNameElement = document.getElementById("explore-name"),
       gradientElement = document.getElementById("main-gradient");
@@ -95,8 +95,14 @@ function setBackground(nodes) {
   }
   if (imageAdded && linkAdded) {
     //if all required subnodes were provided
-    imageElement.style.backgroundImage = "url(" + backgroundImage + ")";
-    exploreLinkElement.style.visibility = "visible";
+    var backgroundImageContainer = new Image();
+    backgroundImageContainer.src = backgroundImage;
+    //set the background image after it's been loaded, so it doesn't appear while it's loading
+    backgroundImageContainer.onload = function () {
+      imageElement.style.backgroundImage = "url(" + backgroundImage + ")";
+      imageElement.style.opacity = 1;
+      exploreLinkElement.style.visibility = "visible";
+    };
   }
 }
 

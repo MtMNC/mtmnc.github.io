@@ -52,12 +52,8 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  transition: opacity .1s;
-}
-
 #main-container {
-  background-image: url(img/bgbio2015.jpg);
+  background-image: url(img/bgbio2015gradient.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -98,12 +94,26 @@ a {
   opacity: .7;
 }
 
-#main-gradient {
+#placeholder-gradient {
   background-color: #555;
   background-image: -webkit-linear-gradient(135deg, #1a97ae, #555);
   background-image: -moz-linear-gradient(135deg, #1a97ae, #555);
   background-image: -o-linear-gradient(135deg, #1a97ae, #555);
   background-image: linear-gradient(135deg, #1a97ae, #555);
+}
+
+#background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .2s;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 #header {
@@ -116,7 +126,7 @@ a {
 }
 
 #header:after {
-  content: '';
+  content: "";
   width: 3.75em;
   height: 0;
   position: absolute;
@@ -179,7 +189,7 @@ a {
 }
 
 .new-messages:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -195,7 +205,7 @@ a {
 
 .button {
   border: 0; /* override default style of button (the element not the .button class) */
-  transition: background-color .1s;
+  transition: background-color .1s, opacity .1s;
 }
 
 .button:hover {
@@ -323,7 +333,6 @@ section {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   padding-left: .25em;
-  padding-right: .25em;
   -webkit-appearance: none; /* override default WebKit search box styling */
   border-radius: 0; /* override default WebKit search box styling */
   font-family: "Franklin Gothic Book", "Helvetica Neue", sans-serif;
@@ -404,10 +413,11 @@ section {
   text-decoration: none;
   font-size: 1.25em;
   visibility: hidden;
+  transition: visibility .2s;
 }
 
 #explore-link:after {
-  content: '\00a0→';
+  content: "\00a0→";
 }
 
 #explore-link:hover {
@@ -440,6 +450,18 @@ section {
   color: #fff;
 }
 
+.featured-box a {
+  color: #fff; /* Twitter feed alt link */
+}
+
+.featured-box .background-gradient {
+  transition: opacity .1s;
+}
+
+.featured-link:hover .background-gradient {
+  opacity: .9;
+}
+
 .featured-category {
   font-size: 1em;
   background-color: #000;
@@ -456,7 +478,7 @@ section {
 }
 
 .featured-category:after {
-  content: '';
+  content: "";
   width: 2em;
   height: 0;
   position: absolute;
@@ -480,6 +502,8 @@ section {
   z-index: 1;
   position: absolute;
   bottom: .5em;
+  left: .5em;
+  right: .5em;
   text-shadow: 0 0 1em #333;
 }
 
