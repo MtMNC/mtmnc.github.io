@@ -48,6 +48,10 @@ body {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 .sidebar-open {
   overflow-x: hidden;
 }
@@ -331,7 +335,7 @@ section {
   height: 2.2em;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
-  padding-left: .25em;
+  padding: .25em;
   -webkit-appearance: none; /* override default WebKit search box styling */
   border-radius: 0; /* override default WebKit search box styling */
   font-family: "Franklin Gothic Book", "Helvetica Neue", sans-serif;
@@ -490,7 +494,6 @@ section {
 
 .featured-title {
   font-size: 1.75em;
-  margin-bottom: 0;
 }
 
 #featured-social {
