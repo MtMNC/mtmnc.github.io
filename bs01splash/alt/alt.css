@@ -98,7 +98,6 @@ body {
   background-color: #555;
   background-image: -webkit-linear-gradient(135deg, #1a97ae, #555);
   background-image: -moz-linear-gradient(135deg, #1a97ae, #555);
-  background-image: -o-linear-gradient(135deg, #1a97ae, #555);
   background-image: linear-gradient(135deg, #1a97ae, #555);
 }
 
@@ -341,8 +340,6 @@ section {
 #search-input-query:focus {
   outline: 0;
   border-color: #056b7d;
-  -webkit-box-shadow: inset 0 0 0 .1em #056b7d;
-  -moz-box-shadow: inset 0 0 0 .1em #056b7d;
   box-shadow: inset 0 0 0 .1em #056b7d;
 }
 
