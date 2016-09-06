@@ -53,7 +53,7 @@ body {
 }
 
 #main-container {
-  background-image: url(img/bgbio2015gradient.jpg);
+  background-color: #068196;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -116,7 +116,7 @@ body {
   background-position: center;
 }
 
-#header {
+#site-header {
   background: rgba(0, 0, 0, .3);
   position: relative;
   z-index: 1;
@@ -125,7 +125,7 @@ body {
   padding: .25em;
 }
 
-#header:after {
+#site-header:after {
   content: "";
   width: 3.75em;
   height: 0;
@@ -174,7 +174,7 @@ body {
 #user-link {
   color: #fff;
   text-decoration: none;
-  height: 4em; /* 3em (height of #header) + 1.5em (height of #header:after) - .5em (top and bottom padding) */
+  height: 4em; /* 3em (height of #site-header) + 1.5em (height of #site-header:after) - .5em (top and bottom padding) */
   position: absolute; /* position: absolute so it doesn't push the site logo off center when the window is small */
   right: .25em;
   z-index: 1;
@@ -274,10 +274,6 @@ body {
   opacity: .5;
 }
 
-section {
-  margin: 2em;
-}
-
 .background-kewa {
   background-image: url(img/MNOLG_Gukko_Force.png);
 }
@@ -286,6 +282,11 @@ section {
   position: relative;
   text-align: center;
   z-index: 1;
+}
+
+#content-header,
+section {
+  margin: 2em;
 }
 
 .logo-link:hover {
@@ -302,9 +303,8 @@ section {
 }
 
 #logo-description {
-  margin: 0;
-  padding: 0;
   font-weight: normal;
+  font-size: 1.5em;
 }
 
 #search-form {
@@ -429,7 +429,9 @@ section {
 }
 
 .featured-link {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s;
 }
 
 .featured-box {
@@ -448,6 +450,7 @@ section {
   box-sizing: border-box;
   overflow: hidden;
   color: #fff;
+  -webkit-transform:translate3d(0, 0, 0); /* stop flicker on hover in Safari, see http://stackoverflow.com/a/7733864 */
 }
 
 .featured-box a {
@@ -468,8 +471,8 @@ section {
   color: #fff;
   margin: -.5em;
   padding: .25em;
-  padding-left: .5em;
   position: relative;
+  padding-left: .5em;
   z-index: 1;
   height: 1.5em;
   line-height: 1.5em;

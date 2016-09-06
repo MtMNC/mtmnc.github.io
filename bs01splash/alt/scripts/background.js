@@ -53,12 +53,15 @@ function setBackground(nodes) {
   //Go through all the subnodes and set the box's contents as appropriate.
   //The 2 required subnodes are category, image, and link.
   var imageAdded = false,
-      linkAdded = false;
+      linkAdded = false,
+      gradientAdded = false;
   //store the background image until we're done iterating, since it should stay hidden
   //until we've determined there's an image and a link provided. Also it'll stop the image
   //from changing multiple times if there are multiple image nodes.
-  var backgroundImage = null;
+  var backgroundImage = "./img/bgbio2015gradient.jpg";
   var subnode = null;
+  var color1 = null,
+      color2 = null;
   for (i = 0; i < nodeToUse.childElementCount; i++) {
     subnode = nodeToUse.childNodes[i];
     switch (subnode.getAttribute("class")) {
@@ -80,30 +83,34 @@ function setBackground(nodes) {
           break;
         }
         //get the colors for the background gradient
-        var color1 = subnode.firstChild.firstChild.nodeValue,
-            color2 = subnode.firstChild.nextSibling.firstChild.nodeValue;
+        color1 = subnode.firstChild.firstChild.nodeValue;
+        color2 = subnode.firstChild.nextSibling.firstChild.nodeValue;
         //set the box's background gradient colors to the values we just got
-        gradientElement.setAttribute("style",
-                                     "background-color: " + color1 + ";" +
-                                     "background-image: -webkit-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: -moz-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: -o-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                     "background-image: linear-gradient(135deg, " + color1 + ", " + color2 + ");"
-                                    );
+        gradientAdded = true;
         break;
     }
   }
-  if (imageAdded && linkAdded) {
-    //if all required subnodes were provided
-    var backgroundImageContainer = new Image();
-    backgroundImageContainer.src = backgroundImage;
-    //set the background image after it's been loaded, so it doesn't appear while it's loading
-    backgroundImageContainer.onload = function () {
-      imageElement.style.backgroundImage = "url(" + backgroundImage + ")";
-      imageElement.style.opacity = 1;
+  var backgroundImageContainer = new Image();
+  backgroundImageContainer.src = backgroundImage;
+  //set the background image after it's been loaded, so it doesn't appear while it's loading
+  backgroundImageContainer.onload = function () {
+    imageElement.style.backgroundImage = "url(" + backgroundImage + ")";
+    imageElement.style.opacity = 1;
+    if (imageAdded && linkAdded) {
+      //if all required subnodes were provided (which also means we're not using the default image)
       exploreLinkElement.style.visibility = "visible";
-    };
-  }
+    }
+    if (imageAdded && gradientAdded) {
+      //if an image and a gradient were both provided
+      gradientElement.setAttribute("style",
+                                   "background-color: " + color1 + ";" +
+                                   "background-image: -webkit-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
+                                   "background-image: -moz-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
+                                   "background-image: -o-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
+                                   "background-image: linear-gradient(135deg, " + color1 + ", " + color2 + ");"
+                                  );
+    }
+  };
 }
 
 function setFeatured(nodes) {
@@ -144,7 +151,7 @@ function processFeaturedNode(node, side) {
         break;
       case "link":
         //set the box link's href to the href of the anchor in the "link" subnode
-        linkElement.href = linkURL = subnode.firstChild.getAttribute("href");
+        linkElement.href = subnode.firstChild.getAttribute("href");
         //set the box's title text (i.e., text above the image) to the text of the anchor in the "link" subnode
         titleElement.textContent = subnode.firstChild.firstChild.nodeValue;
         linkAdded = true;
@@ -168,6 +175,7 @@ function processFeaturedNode(node, side) {
   }
   if (categoryAdded && imageAdded && linkAdded) {
     //if all required subnodes were provided
-    linkElement.style.display = "inline-block";
+    linkElement.style.visibility = "visible";
+    linkElement.style.opacity = 1;
   }
 }
