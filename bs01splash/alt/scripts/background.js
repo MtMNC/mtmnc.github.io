@@ -58,9 +58,9 @@ function setBackground(nodes) {
   //store the background image until we're done iterating, since it should stay hidden
   //until we've determined there's an image and a link provided. Also it'll stop the image
   //from changing multiple times if there are multiple image nodes.
-  var backgroundImage = "./img/bgbio2015gradient.jpg";
   var subnode = null;
-  var color1 = null,
+  var backgroundImage = "./img/bgbio2015gradient.jpg",
+      color1 = null,
       color2 = null;
   for (i = 0; i < nodeToUse.childElementCount; i++) {
     subnode = nodeToUse.childNodes[i];
@@ -93,7 +93,7 @@ function setBackground(nodes) {
   var backgroundImageContainer = new Image();
   backgroundImageContainer.src = backgroundImage;
   //set the background image after it's been loaded, so it doesn't appear while it's loading
-  backgroundImageContainer.onload = function () {
+  backgroundImageContainer.onload = function() {
     imageElement.style.backgroundImage = "url(" + backgroundImage + ")";
     imageElement.style.opacity = 1;
     if (imageAdded && linkAdded) {
@@ -106,7 +106,6 @@ function setBackground(nodes) {
                                    "background-color: " + color1 + ";" +
                                    "background-image: -webkit-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
                                    "background-image: -moz-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
-                                   "background-image: -o-linear-gradient(135deg, " + color1 + ", " + color2 + ");" +
                                    "background-image: linear-gradient(135deg, " + color1 + ", " + color2 + ");"
                                   );
     }
@@ -134,8 +133,11 @@ function processFeaturedNode(node, side) {
   //The 3 required subnodes are category, image, and link.
   var categoryAdded = false,
       imageAdded = false,
-      linkAdded = false;
+      linkAdded = false,
+      colorAdded = false;
   var subnode = null;
+  var backgroundImage = null,
+      color = null;
   for (i = 0; i < node.childElementCount; i++) {
     subnode = node.childNodes[i];
     switch (subnode.getAttribute("class")) {
@@ -145,8 +147,8 @@ function processFeaturedNode(node, side) {
         categoryAdded = true;
         break;
       case "image":
-        //set the box's background image to the href of the anchor in the "image" subnode
-        boxElement.style.backgroundImage = "url(" + subnode.firstChild.getAttribute("href") + ")";
+        //store the href of the anchor in the "image" subnode
+        backgroundImage = subnode.firstChild.getAttribute("href");
         imageAdded = true;
         break;
       case "link":
@@ -162,20 +164,30 @@ function processFeaturedNode(node, side) {
         break;
       case "color":
         //get the color for the background
-        var color = subnode.firstChild.nodeValue;
+        color = subnode.firstChild.nodeValue;
         //set the box's background gradient colors to the values we just got
-        gradientElement.setAttribute("style",
-                                     "background-image: -webkit-linear-gradient(" + color + ", #000 90%);" +
-                                     "background-image: -moz-linear-gradient(" + color + ", #000 90%);" +
-                                     "background-image: -o-linear-gradient(" + color + ", #000 90%);" +
-                                     "background-image: linear-gradient(" + color + ", #000 90%);"
-                                   );
+        colorAdded = true;
         break;
     }
   }
-  if (categoryAdded && imageAdded && linkAdded) {
+  if (imageAdded && categoryAdded && linkAdded) {
     //if all required subnodes were provided
-    linkElement.style.visibility = "visible";
-    linkElement.style.opacity = 1;
+    var backgroundImageContainer = new Image();
+    backgroundImageContainer.src = backgroundImage;
+    //set the background image after it's been loaded, so it doesn't appear while it's loading
+    backgroundImageContainer.onload = function() {
+      boxElement.style.backgroundImage = "url(" + backgroundImage + ")";
+      boxElement.style.opacity = 1;
+      if (imageAdded && colorAdded) {
+        //if an image and a gradient were both provided
+        gradientElement.setAttribute("style",
+                                     "background-image: -webkit-linear-gradient(" + color + ", #000 90%);" +
+                                     "background-image: -moz-linear-gradient(" + color + ", #000 90%);" +
+                                     "background-image: linear-gradient(" + color + ", #000 90%);"
+                                   );
+      }
+      linkElement.style.visibility = "visible";
+      linkElement.style.opacity = 1;
+    };
   }
 }
