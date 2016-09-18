@@ -1,13 +1,13 @@
 var mostRecentlyUpdatedMWSearchSuggestions = null;
 
 function MWSearchSuggestions(settings) {
-  this.wiki = "https://en.wikipedia.org/w/",
-  this.searchInputElement = document.getElementById("search-input-query"),
-  this.suggestionsOutputElement = document.getElementById("search-suggestions"),
-  this.maxSuggestionCount = 5,
-  this.suggestionLinkClass = "search-suggestion-link",
-  this.selectedSuggestion = null,
-  this.apiCall = null,
+  this.wiki = "https://en.wikipedia.org/w/";
+  this.searchInputElement = document.getElementById("search-input-query");
+  this.suggestionsOutputElement = document.getElementById("search-suggestions");
+  this.maxSuggestionCount = 5;
+  this.suggestionLinkClass = "search-suggestion-link";
+  this.selectedSuggestion = null;
+  this.apiCall = null;
   this.apiCallFinished = true;
   if (settings !== undefined) {
     if (settings.hasOwnProperty("wiki")) {

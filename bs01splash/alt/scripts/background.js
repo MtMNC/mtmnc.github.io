@@ -10,7 +10,7 @@ function getBackgroundData() {
   //requesting the HTML itself, we let Yahoo! Query Language do the work for us. It'll process
   //the HTML, pull out the divs, then return them. Problem solved. Credit to Derek Gathright
   //on StackOverflow: http://stackoverflow.com/a/2679304
-  backgroundApiCall.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fbiosector01.com%2Fwiki%2Findex.php%3Ftitle%3DUser%3AMorris_the_Mata_Nui_Cow%2FSandbox2%26action%3Drender%22", true);
+  backgroundApiCall.open("GET", "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'http%3A%2F%2Fbiosector01.com%2Fwiki%2Findex.php%3Ftitle%3DBIONICLEsector01%3ASplash%26action%3Drender'", true);
   backgroundApiCall.send();
 }
 
