@@ -128,17 +128,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: .25em;
 }
 
-#site-header:after {
-  content: "";
-  width: 3.75em;
-  height: 0;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  border-left: 1.5em solid transparent;
-  border-top: 1.5em solid rgba(0, 0, 0, .3);
-}
-
 .sidebar-button {
   position: absolute;
   top: 0;
@@ -174,13 +163,37 @@ h1, h2, h3, h4, h5, h6 {
   height: inherit;
 }
 
+#user-link-container {
+  display: inline-block;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#user-link-container:after {
+  content: "";
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 3em;
+  right: 0;
+  border-left: 1.25em solid transparent;
+  border-top: 1.25em solid rgba(0, 0, 0, .3);
+}
+
 #user-link {
   color: #fff;
   text-decoration: none;
-  height: 4em; /* 3em (height of #site-header) + 1.5em (height of #site-header:after) - .5em (top and bottom padding) */
-  position: absolute; /* position: absolute so it doesn't push the site logo off center when the window is small */
-  right: .25em;
+  height: 3.75em;
+  padding: .25em;
+  padding-right: .5em;
+  vertical-align: middle;
+  position: relative;
+  float: right;
   z-index: 1;
+  text-transform: uppercase;
+  line-height: 1em;
 }
 
 #user-link:hover {
@@ -192,18 +205,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .new-messages:after {
-  content: "";
+  content: "!";
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -.1em;
+  right: -.25em;
   background-color: #ff0000;
-  width: 1em;
-  height: 1em;
-  border-radius: .5em;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: .6em;
+  line-height: 1.2em;
+  text-align: center;
+  box-shadow: 0 0 .1em #333;
+}
+
+#avatar-container {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  vertical-align: inherit;
 }
 
 #avatar {
   height: 100%;
+}
+
+#username {
+  max-width: 130px;
+  display: inline-block;
+  vertical-align: inherit;
+  text-overflow: clip;
+  overflow-y: hidden;
+  word-wrap: break-word;
+  max-height: 100%;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  padding-left: .1em;
 }
 
 .button {
@@ -451,7 +487,7 @@ section {
   box-sizing: border-box;
   overflow: hidden;
   color: #fff;
-  -webkit-transform:translate3d(0, 0, 0); /* stop flicker on hover in Safari, see http://stackoverflow.com/a/7733864 */
+  -webkit-transform: translate3d(0, 0, 0); /* stop flicker on hover in Safari, see http://stackoverflow.com/a/7733864 */
 }
 
 .featured-box a {
@@ -556,6 +592,14 @@ section {
 }
 
 @media screen and (max-width: 20em) { /* 12em for sidebar, 3em for sidebar opener */
+  #user-link {
+    padding-right: .25em;
+  }
+
+  #username {
+    display: none;
+  }
+
   #sidebar {
     width: 100%;
     left: -100%;

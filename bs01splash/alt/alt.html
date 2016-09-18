@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="alt.css">
     <script src="scripts/background.js" defer></script>
     <script src="scripts/search-suggestions.js" defer></script>
-    <!--<script src="scripts/userinfo.js" defer></script>-->
+    <!--<script src="scripts/user-info.js" defer></script>-->
     <script src="scripts/runner.js" defer></script>
   </head>
   <body>
@@ -23,9 +23,14 @@
           <a href="https://www.youtube.com/channel/UCoeMPbSoTyCWrBTaasduYZg" class="social-link button" title="BIONICLEsector01 on YouTube"><img class="social-image" src="img/youtube.png" alt="BIONICLEsector01 on YouTube" /></a>
           <a href="https://www.flickr.com/photos/43377110@N06/" class="social-link button" title="Wrecker of Doors on Flickr"><img class="social-image" src="img/flickr.png" alt="BS01 on Flickr" /></a>
         </div>
-        <a id="user-link" class="button" href="http://biosector01.com/wiki/index.php?title=Special:UserLogin" title="Log in or create an account">
-          <img src="img/avatar-anon.png" id="avatar" alt="avatar"/>
-        </a>
+        <div id="user-link-container">
+          <a id="user-link" class="button" href="http://biosector01.com/wiki/index.php?title=Special:UserLogin" title="Log in or create an account">
+            <span id="avatar-container">
+              <img src="img/avatar-anon.png" id="avatar" alt="avatar"/>
+            </span>
+            <div id="username">Log in</div>
+          </a>
+        </div>
       </header>
       <aside id="sidebar">
         <a id="sidebar-closer" class="button sidebar-button"></a>
