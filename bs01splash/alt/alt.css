@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #eee;
   z-index: 0;
   cursor: pointer;
-  transition: opacity .2s;
+  transition: opacity .1s;
 }
 
 .sidebar-open #fade-overlay {
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   opacity: 0;
   z-index: 0;
-  transition: opacity .2s;
+  transition: opacity .1s;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -414,7 +414,7 @@ section {
   text-decoration: none;
   font-size: 1.25em;
   visibility: hidden;
-  transition: visibility .2s;
+  transition: visibility .2s, opacity .1s;
 }
 
 #explore-link:after {
@@ -432,7 +432,7 @@ section {
 .featured-link {
   visibility: hidden;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity .1s;
 }
 
 .featured-box {
