@@ -499,8 +499,8 @@ section {
   transition: opacity .1s;
 }
 
-#background-left,
-#background-right {
+#gradient-left,
+#gradient-right {
   background-image: -webkit-linear-gradient(transparent, #000 90%);
   background-image: -moz-linear-gradient(transparent, #000 90%);
   background-image: linear-gradient(transparent, #000 90%);
