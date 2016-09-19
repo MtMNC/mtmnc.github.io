@@ -483,9 +483,6 @@ section {
   text-align: left;
   vertical-align: middle;
   position: relative;
-  background-image: -webkit-linear-gradient(transparent, #000 90%);
-  background-image: -moz-linear-gradient(transparent, #000 90%);
-  background-image: linear-gradient(transparent, #000 90%);
   background-size: cover;
   background-position: center center;
   box-sizing: border-box;
@@ -500,6 +497,13 @@ section {
 
 .featured-box .background-gradient {
   transition: opacity .1s;
+}
+
+#background-left,
+#background-right {
+  background-image: -webkit-linear-gradient(transparent, #000 90%);
+  background-image: -moz-linear-gradient(transparent, #000 90%);
+  background-image: linear-gradient(transparent, #000 90%);
 }
 
 .featured-link:hover .background-gradient {
