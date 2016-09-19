@@ -484,6 +484,7 @@ section {
   vertical-align: middle;
   position: relative;
   background-size: cover;
+  background-position: center center;
   box-sizing: border-box;
   overflow: hidden;
   color: #fff;
