@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #content-header,
 section {
-  margin: 2em;
+  margin: 2em 0;
 }
 
 .logo-link:hover {
@@ -338,7 +338,7 @@ section {
   max-width: 350px;
   margin: 0 auto;
   display: none;
-  padding: 1em;
+  padding: .25em 0;
 }
 
 #logo-description {
@@ -579,10 +579,13 @@ section {
     display: inline-block;
   }
 
-  #logo-description,
   #search-input-random,
   #logo-vert {
     display: none;
+  }
+
+  #content-header {
+    margin: 1.5em .5em;
   }
 
   section {
@@ -596,6 +599,10 @@ section {
 
   #logo-horiz {
     display: block;
+  }
+
+  #logo-description {
+    font-size: 1.25em;
   }
 }
 
