@@ -338,7 +338,7 @@ section {
   max-width: 350px;
   margin: 0 auto;
   display: none;
-  padding: .25em 0;
+  padding: .25em 0 .5em 0;
 }
 
 #logo-description {
@@ -585,7 +585,7 @@ section {
   }
 
   #content-header {
-    margin: 1.5em .5em;
+    margin: 1.5em .5em 1em .5em;
   }
 
   section {
